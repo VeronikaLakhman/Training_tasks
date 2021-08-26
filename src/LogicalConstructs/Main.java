@@ -1,3 +1,5 @@
+package LogicalConstructs;
+
 import java.util.Scanner;
 
 /*На вход подаются целых три числа - день, месяц и год (по григорианскому календарю).
