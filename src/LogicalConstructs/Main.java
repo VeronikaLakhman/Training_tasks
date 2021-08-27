@@ -11,20 +11,24 @@ public class Main {
         int month = sc.nextInt();
         int years = sc.nextInt();
 
-        boolean notLeapYear = (years % 400 != 0 || years % 4 != 0 && years % 100 == 0) && (years >= 0);
-        boolean leapYear = (years % 400 == 0 || years % 4 == 0 && years % 100 != 0) && (years >= 1584);
+        boolean isleapYear = (years % 400 == 0 || years % 4 == 0 && years % 100 != 0) && (years >= 1584);
+        boolean monthWith31Days = month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12;
+        boolean monthWith30Days = month == 4 || month == 6 || month == 9 || month == 11;
 
-
-        if ((days > 0 && days <= 31) && (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) && notLeapYear) {
+        if ( validNumberOfDays(days, 31) && monthWith31Days && !isleapYear) {
             System.out.println("true");
-        } else if ((days > 0 && days <= 30) && (month == 4 || month == 6 || month == 9 || month == 11) && notLeapYear) {
+        } else if (validNumberOfDays(days, 30) && monthWith30Days && !isleapYear){
             System.out.println("true");
-        } else if ((days > 0 && days <= 28) && (month == 2) && notLeapYear) {
+        } else if (validNumberOfDays(days, 28)&& (month == 2) && !isleapYear) {
             System.out.println("true");
-        } else if ((days > 0 && days <= 29) && (month == 2) && leapYear) {
+        } else if (validNumberOfDays(days, 29) && (month == 2) && isleapYear) {
             System.out.println("true");
         } else {
             System.out.println("false");
         }
+    }
+
+    static boolean validNumberOfDays (int days, int lessThen){
+        return days > 0 && days <= lessThen;
     }
 }
