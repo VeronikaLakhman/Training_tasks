@@ -1,5 +1,6 @@
 package LogicalConstructs2;
 import java.util.Scanner;
+import java.util.TreeSet;
 
 /* На вход подаются три слова на одной строке, разделённые пробелом.
 Выведите их в алфавитном порядке. Гарантируется, что слова начинаются с разных букв.
@@ -19,7 +20,15 @@ public class Main {
         String b = sc.next();
         String c = sc.next();
 
-        char indexFirstWord = a.charAt(0);
+        TreeSet<String> words = new TreeSet<>();
+        words.add(a);
+        words.add(b);
+        words.add(c);
+        for (String word : words){
+            System.out.println(word);
+        }
+
+/*        char indexFirstWord = a.charAt(0);
         char indexSecondWord = b.charAt(0);
         char indexThirdWord = c.charAt(0);
 
@@ -47,6 +56,6 @@ public class Main {
             System.out.println(c);
             System.out.println(b);
             System.out.println(a);
-        }
+        } */
     }
 }
