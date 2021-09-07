@@ -1,5 +1,8 @@
 package LogicalConstructs2;
+import java.util.HashSet;
+import java.util.Locale;
 import java.util.Scanner;
+import java.util.TreeSet;
 
 /* На вход подаются три слова на одной строке, разделённые пробелом.
 Выведите их в алфавитном порядке. Гарантируется, что слова начинаются с разных букв.
@@ -15,6 +18,7 @@ Python
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        /*
         String a = sc.next();
         String b = sc.next();
         String c = sc.next();
@@ -47,6 +51,6 @@ public class Main {
             System.out.println(c);
             System.out.println(b);
             System.out.println(a);
-        }
+        } */
     }
 }
